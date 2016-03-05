@@ -1,8 +1,8 @@
 #ertugerata/pisi-chroot-farm
-FROM ertugerata/pisi-chroot-base
-MAINTAINER Ertuğrul Erata <ertugrulerata@gmail.com>
+FROM ayhanyalcinsoy/pisi-chroot-32bit
+MAINTAINER Ayhan Yalçınsoy <ayhanyalcinsoy@pisilinux.org>
 
-RUN service dbus start && pisi cp && pisi ar pisi-2.0 http://ciftlik.pisilinux.org/pisi-2.0/pisi-index.xml.xz \
+RUN service dbus start && pisi cp && pisi ar pisi-32bit https://dl.dropboxusercontent.com/u/71120717/i686/pisi-index.xml.xz \
     && pisi it --ignore-safety --ignore-dependency autoconf autogen automake binutils bison flex gawk gc gcc gnuconfig \
     guile libmpc libtool-ltdl libtool lzo m4 make mpfr pkgconfig yacc glibc-devel && service dbus stop
 
